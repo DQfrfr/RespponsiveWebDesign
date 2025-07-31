@@ -1,40 +1,145 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset = "UTF-8">
-    <meta name = "viewport" content = "width=device-width, initial-scale=1.0">
-    <meta name = "description" content = "About DQ">
-    <link rel="stylesheet" href="index.css">
-    <meta name = "author" content = "DaQuaylon Love">
-
-    <title>About DQ</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="DQ's Portfolio - Web Developer & Computer Science Student">
+    <link rel="stylesheet" href="C:\Nuemont\WebDesignOrsumshit\lab 1 and 2-1 (1)\Final\CSS\index.css">
+    <meta name="author" content="DaQuaylon Love">
+    <title>DQ's Portfolio</title>
 </head>
 <body>
-    <Header role="Banner">
-        <h1>Welcome to my page!</h1>
-        <p>This page will cover who I am!</p>
-    </Header>
-    <hr>
+    <nav class="main-nav">
+        <div class="nav-container">
+            <div class="logo">
+                <h3>DQ</h3>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="AboutMe.html">About Me</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="favorites.html">Favorites</a></li>
+                <li><a href="intrest.html">Interests</a></li>
+                <li><a href="plans.html">Future Plans</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
 
-    <div class="container">
-        <h2>About Me</h2>
-        <details>
-            <summary>More about me</summary>
-            <nav role="navigation"> 
-                <div class="container">
-                    <ul>
-                        <li><a href="favorites.html">My Favorite Websites</a></li>
-                        <li><a href="intrest.html">My intrests</a></li>
-                        <li><a href="plans.html">My future plans</a></li>
-                    </ul>
+    <header class="hero">
+        <div class="hero-content">
+            <h1>Welcome to DQ's Portfolio</h1>
+            <p>Computer Science Student | C++ & Java Developer | Problem Solver</p>
+            <div class="cta-buttons">
+                <a href="AboutMe.html" class="btn btn-primary">Learn About Me</a>
+                <a href="projects.html" class="btn btn-secondary">View My Work</a>
+            </div>
+        </div>
+    </header>
+
+    <section class="slideshow-container">
+        <h2>Featured Content</h2>
+        
+        <div class="slideshow">
+            <div class="slide active">
+                <div class="slide-content">
+                    <h3>About Me</h3>
+                    <p>19-year-old Computer Science student at Neumont College, passionate about C++ and Java development.</p>
+                    <a href="AboutMe.html" class="slide-link">Learn More →</a>
                 </div>
-            </nav>
-        </details>
-        <img src="dq.png" alt="A picture of me at work">
-        <p>Hi, I’m DaQuaylon Love, but most people just call me <strong>DQ</strong>. I’m 19 and currently studying<br> at Neumont College of Computer Science. I specialize in C++ and Java, and I’m passionate<br> about building things that actually work in the real world. I learn best through hands-on experience<br> and enjoy digging deep into how systems operate.
-            Outside of coding, I value real connection.<br>I’m introspective, loyal, and someone who puts heart into everything I do, whether it’s a<br> project, a conversation, or a late-night adventure with friends. I believe the best things in<br> life are the ones you build and share with others.
-        </p>
-        <hr>
-    </div>
-    <footer>Copyright ©2025 by DaQuaylon Love</footer>
+            </div>
+            
+            <div class="slide">
+                <div class="slide-content">
+                    <h3>My Projects</h3>
+                    <p>Check out my latest coding projects and assignments that showcase my programming skills.</p>
+                    <a href="projects.html" class="slide-link">View Projects →</a>
+                </div>
+            </div>
+            
+            <div class="slide">
+                <div class="slide-content">
+                    <h3>Gaming & Tech</h3>
+                    <p>Passionate about gaming, especially Rainbow Six Siege and BeamNG.Drive, plus typing at 105 WPM!</p>
+                    <a href="intrest.html" class="slide-link">See Interests →</a>
+                </div>
+            </div>
+            
+            <div class="slide">
+                <div class="slide-content">
+                    <h3>Future Goals</h3>
+                    <p>Planning to stay in Salt Lake City and build a career in software development after graduation.</p>
+                    <a href="plans.html" class="slide-link">Read Plans →</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="slide-indicators">
+            <span class="indicator active" data-slide="0"></span>
+            <span class="indicator" data-slide="1"></span>
+            <span class="indicator" data-slide="2"></span>
+            <span class="indicator" data-slide="3"></span>
+        </div>
+    </section>
+
+    <section class="quick-stats">
+        <div class="stats-container">
+            <div class="stat-item">
+                <h3>19</h3>
+                <p>Years Old</p>
+            </div>
+            <div class="stat-item">
+                <h3>105</h3>
+                <p>WPM Typing Speed</p>
+            </div>
+            <div class="stat-item">
+                <h3>2+</h3>
+                <p>Programming Languages</p>
+            </div>
+            <div class="stat-item">
+                <h3>∞</h3>
+                <p>Passion for Learning</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="quote-widget">
+        <h2>Quote of the Day</h2>
+        <div id="quote-display">
+            <p>Loading quote...</p>
+        </div>
+    </section>
+
+
+    <footer>
+        <p>Copyright ©2025 by DaQuaylon Love</p>
+    </footer>
+    <script src="/js/quote.js"></script>
+    <script>
+    const slides = document.querySelectorAll('.slide');
+    const indicators = document.querySelectorAll('.indicator');
+    let currentSlide = 0;
+
+    function showSlide(index) {
+        slides.forEach((slide, i) => {
+            slide.classList.toggle('active', i === index);
+            indicators[i].classList.toggle('active', i === index);
+        });
+    }
+
+    function nextSlide() {
+        currentSlide = (currentSlide + 1) % slides.length;
+        showSlide(currentSlide);
+    }
+
+    setInterval(nextSlide, 5000);
+
+    indicators.forEach((indicator, i) => {
+        indicator.addEventListener('click', () => {
+            currentSlide = i;
+            showSlide(currentSlide);
+        });
+    });
+</script>
 </body>
+</html>
