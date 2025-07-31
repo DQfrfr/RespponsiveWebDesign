@@ -1,5 +1,3 @@
-/* CSS for contact.html - Contact Me */
-
 body {
     font-family: Arial, sans-serif;
     background-color: #f0f0f0;
@@ -9,7 +7,6 @@ body {
     line-height: 1.6;
 }
 
-/* Navigation */
 nav {
     background-color: #ddd;
     padding: 15px;
@@ -38,7 +35,6 @@ nav a.active {
     background-color: #bbb;
 }
 
-/* Header */
 header {
     background-color: #e8e8e8;
     padding: 25px;
@@ -64,7 +60,6 @@ hr {
     margin: 15px 0 0 0;
 }
 
-/* Contact sections */
 section {
     background-color: white;
     padding: 25px;
@@ -90,7 +85,6 @@ p {
     margin-bottom: 15px;
 }
 
-/* Contact details */
 .contact-details {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -124,13 +118,11 @@ p {
     text-decoration: underline;
 }
 
-/* Contact message section */
 .contact-message p {
     color: #666;
     margin-bottom: 15px;
 }
 
-/* Footer */
 footer {
     background-color: #ddd;
     text-align: center;
@@ -143,7 +135,6 @@ footer p {
     margin: 0;
 }
 
-/* Mobile responsive */
 @media (max-width: 600px) {
     nav ul {
         flex-direction: column;
